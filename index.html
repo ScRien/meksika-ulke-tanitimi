@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meksika'yı Keşfet | Ülke Tanıtım Şenliği</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Splash Screen (Language Selection) -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <h1 class="splash-title">¡Hola!</h1>
+      <p id="splash-desc">Lütfen bir dil seçin / Please select a language / Por favor seleccione un idioma</p>
+      <div class="lang-options">
+        <button class="lang-btn" data-lang="tr">🇹🇷 Türkçe</button>
+        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="hidden">
+    <div class="nav-container">
+      <div class="logo">🇲🇽 <span data-i18n="nav_title">Viva México</span></div>
+      <div class="lang-selector">
+        <select id="lang-select">
+          <option value="tr">🇹🇷 TR</option>
+          <option value="en">🇬🇧 EN</option>
+          <option value="es">🇪🇸 ES</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="hidden">
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title" data-i18n="hero_title">¡Bienvenidos a México!</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Renklerin, lezzetlerin ve tarihin büyülü dünyasına hoş geldiniz.</p>
+        <a href="#facts" class="btn-primary" data-i18n="hero_btn">Hemen Keşfet</a>
+      </div>
+      <div class="hero-decor decor-1"></div>
+      <div class="hero-decor decor-2"></div>
+      <div class="hero-decor decor-3"></div>
+    </section>
+
+    <!-- Did You Know? Section -->
+    <section class="facts" id="facts">
+      <div class="container">
+        <h2 class="section-title" data-i18n="fact_title">Biliyor muydunuz?</h2>
+        <div class="cards-grid">
+          
+          <!-- Card 1 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-pink">
+                <h3 data-i18n="fact1_front">Çikolatanın Kökeni 🍫</h3>
+                <div class="tap-hint">👆</div>
+              </div>
+              <div class="flip-card-back card-pink">
+                <p data-i18n="fact1_back">Kakao, antik Mayalar ve Aztekler tarafından içecek olarak tüketilirdi ve para yerine kullanılırdı!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-orange">
+                <h3 data-i18n="fact2_front">Gizemli Piramitler 🕍</h3>
+                <div class="tap-hint">👆</div>
+              </div>
+              <div class="flip-card-back card-orange">
+                <p data-i18n="fact2_back">Chichén Itzá, dünyanın yeni yedi harikasından biridir ve kusursuz bir astronomik takvimdir.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-yellow">
+                <h3 data-i18n="fact3_front">Renkli Televizyon 📺</h3>
+                <div class="tap-hint">👆</div>
+              </div>
+              <div class="flip-card-back card-yellow">
+                <p data-i18n="fact3_back">Renkli televizyonun mucitlerinden biri Meksikalı mühendis Guillermo González Camarena'dır.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture Corner Section -->
+    <section class="culture" id="culture">
+      <div class="container">
+        <h2 class="section-title" data-i18n="culture_title">Kültür Köşesi</h2>
+        <div class="culture-grid">
+          <div class="culture-card">
+            <div class="culture-icon">💀</div>
+            <h3 data-i18n="cult1_title">Día de los Muertos</h3>
+            <p data-i18n="cult1_desc">Ölüler Günü, kaybettiklerimizi anmak için renkli sunaklar ve şeker kafataslarıyla kutlanan neşeli bir festivaldir.</p>
+          </div>
+          <div class="culture-card">
+            <div class="culture-icon">🎺</div>
+            <h3 data-i18n="cult2_title">Mariachi Müzik</h3>
+            <p data-i18n="cult2_desc">Geleneksel kıyafetleri ve coşkulu enstrümanlarıyla Mariachi, Meksika'nın ruhunu yansıtan sokak müziğidir.</p>
+          </div>
+          <div class="culture-card">
+            <div class="culture-icon">🤼‍♂️</div>
+            <h3 data-i18n="cult3_title">Lucha Libre</h3>
+            <p data-i18n="cult3_desc">Renkli maskeleri ve akrobatik dövüş hareketleriyle popüler olan eğlenceli Meksika serbest güreşidir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz" id="quiz">
+      <div class="container">
+        <div class="quiz-box">
+          <h2 class="quiz-title" data-i18n="quiz_title">Mini Test: Hangi Meksika Yemeğisin?</h2>
+          
+          <div id="quiz-question-container">
+            <p class="quiz-question" data-i18n="quiz_q1">İdeal tatilin hangisi?</p>
+            <div class="quiz-options">
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="tacos">
+                <span data-i18n="quiz_opt_1a">Hareketli bir festival 🎉</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="guac">
+                <span data-i18n="quiz_opt_1b">Sakin bir plaj 🏖️</span>
+              </label>
+              <label class="quiz-option">
+                <input type="radio" name="q1" value="tamales">
+                <span data-i18n="quiz_opt_1c">Tarihi bir macera 🏛️</span>
+              </label>
+            </div>
+          </div>
+
+          <button id="btn-quiz" class="btn-secondary" data-i18n="quiz_btn">Sonucu Gör</button>
+          
+          <div id="quiz-result" class="quiz-result hidden">
+            <!-- JS will inject result here based on language -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="hidden">
+    <p data-i18n="footer_text">Sevgiyle ve 🌮 ile yapıldı - Ülke Tanıtım Şenliği</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
