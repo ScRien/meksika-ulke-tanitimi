@@ -1,197 +1,335 @@
-const translations = {
+// ==========================================
+// i18n Dictionary
+// ==========================================
+const i18n = {
   tr: {
-    nav_title: "Viva México",
-    hero_title: "¡Bienvenidos a México!",
-    hero_subtitle: "Renklerin, lezzetlerin ve tarihin büyülü dünyasına hoş geldiniz.",
-    hero_btn: "Hemen Keşfet",
-    fact_title: "Biliyor muydunuz?",
-    fact1_front: "Çikolatanın Kökeni 🍫",
-    fact1_back: "Kakao, antik Mayalar ve Aztekler tarafından içecek olarak tüketilirdi ve para yerine kullanılırdı!",
-    fact2_front: "Gizemli Piramitler 🕍",
-    fact2_back: "Chichén Itzá, dünyanın yeni yedi harikasından biridir ve kusursuz bir astronomik takvimdir.",
-    fact3_front: "Renkli Televizyon 📺",
-    fact3_back: "Renkli televizyonun mucitlerinden biri Meksikalı mühendis Guillermo González Camarena'dır.",
-    culture_title: "Kültür Köşesi",
-    cult1_title: "Día de los Muertos 💀",
-    cult1_desc: "Ölüler Günü, kaybettiklerimizi anmak için renkli sunaklar ve şeker kafataslarıyla kutlanan neşeli bir festivaldir.",
-    cult2_title: "Mariachi Müzik 🎺",
-    cult2_desc: "Geleneksel kıyafetleri ve coşkulu enstrümanlarıyla Mariachi, Meksika'nın ruhunu yansıtan sokak müziğidir.",
-    cult3_title: "Lucha Libre 🤼‍♂️",
-    cult3_desc: "Renkli maskeleri ve akrobatik dövüş hareketleriyle popüler olan eğlenceli Meksika serbest güreşidir.",
-    quiz_title: "Mini Test: Hangi Meksika Yemeğisin?",
-    quiz_q1: "İdeal tatilin hangisi?",
-    quiz_opt_1a: "Hareketli bir festival 🎉",
-    quiz_opt_1b: "Sakin bir plaj 🏖️",
-    quiz_opt_1c: "Tarihi bir macera 🏛️",
-    quiz_btn: "Sonucu Gör",
-    quiz_res_err: "Lütfen bir seçenek işaretleyin!",
-    quiz_res_tacos: "Sen bir Taco'sun! 🌮 Canlı, eğlenceli ve herkesin favorisi!",
-    quiz_res_guac: "Sen bir Guacamole'sin! 🥑 Serin, rahatlatıcı ve vazgeçilmez!",
-    quiz_res_tamales: "Sen bir Tamale'sin! 🫔 Geleneksel, derin ve sürprizlerle dolu!",
-    footer_text: "Sevgiyle ve 🌮 ile yapıldı - Ülke Tanıtım Şenliği"
+    hero_title: "¡Viva México!",
+    hero_desc: "Dijital bir karnavala hoş geldiniz. Hazırsanız kaydırmaya başlayın!",
+    facts_title: "Sır Kartları",
+    fact1_q: "Kaç Çeşit Mısır?",
+    fact1_a: "Meksika'da 59 farklı yerli mısır türü bulunduğunu biliyor muydunuz? Renkleri mordur, mavidir, kırmızıdır!",
+    fact2_q: "Antik Rehber Köpek",
+    fact2_a: "Xoloitzcuintli (Xolo) cinsi tüysüz köpeklerin, Aztekleri yeraltı dünyasına götüren ruhani rehberler olduğuna inanılırdı.",
+    fact3_q: "Dünyanın En Küçük Volkanı",
+    fact3_a: "Puebla'da yer alan Cuexcomate volkanı, sadece 13 metre boyundadır ve içine merdivenle inilebilir!",
+    quiz_title: "The Taco Meter",
+    quiz_sub: "Hangi Meksika Lezzetisin? Hemen Öğren!",
+    quiz_q1: "Cuma gecesi planın nedir?",
+    quiz_opt_spicy: "🔥 Dans & Müzik (Acılı)",
+    quiz_opt_chill: "🥑 Film & Dinlenme (Sakin)",
+    quiz_opt_sweet: "🍫 Tatlı bir kaçamak (Churros)",
+    quiz_res_spicy: "Sen bir Acılı Salsa'sın! 🔥 Parti seninle başlar, enerjin bitmez!",
+    quiz_res_chill: "Sen bir Guacamole'sin! 🥑 Sakin, serin ve herkesin favorisi!",
+    quiz_res_sweet: "Sen bir Churro'sun! 🍫 Tatlı, sıcak ve mutluluk kaynağı!",
+    muertos_title: "Día de los Muertos 💀",
+    muertos_1_title: "Altarlar (Ofrendas)",
+    muertos_1_desc: "Ruhları eve davet etmek için çiçekler ve mumlarla donatılır.",
+    muertos_2_title: "Cempasúchil",
+    muertos_2_desc: "Turuncu kadife çiçekleri, kokusuyla ruhlara yol gösterir.",
+    muertos_3_title: "La Calavera Catrina",
+    muertos_3_desc: "Renkli şapkalı zarif iskelet figürü festivalin efsanevi yüzüdür.",
+    pinata_title: "Piñata'yı Patlat!",
+    pinata_desc: "Sürprizi görmek için Piñata'ya tıkla.",
+    proverbs: [
+      "Karın doydu mu kalp mutlu olur. (Barriga llena, corazón contento)",
+      "Sadece bekleyenler umutsuzluğa düşer.",
+      "Müzik ruhun gıdasıdır, taco ise bedenin! 🌮",
+      "Bugün güneşi yakala, yarın yıldızları! ✨"
+    ]
   },
   en: {
-    nav_title: "Viva México",
-    hero_title: "¡Bienvenidos a México!",
-    hero_subtitle: "Welcome to the magical world of colors, flavors, and history.",
-    hero_btn: "Discover Now",
-    fact_title: "Did you know?",
-    fact1_front: "Origin of Chocolate 🍫",
-    fact1_back: "Cacao was consumed as a beverage by ancient Mayans and Aztecs, and even used as currency!",
-    fact2_front: "Mysterious Pyramids 🕍",
-    fact2_back: "Chichén Itzá is one of the New Seven Wonders of the World and a flawless astronomical calendar.",
-    fact3_front: "Color Television 📺",
-    fact3_back: "One of the inventors of color television is Mexican engineer Guillermo González Camarena.",
-    culture_title: "Culture Corner",
-    cult1_title: "Día de los Muertos 💀",
-    cult1_desc: "The Day of the Dead is a joyous festival celebrating lost ones with colorful altars and sugar skulls.",
-    cult2_title: "Mariachi Music 🎺",
-    cult2_desc: "With traditional outfits and enthusiastic instruments, Mariachi is the street music reflecting the soul of Mexico.",
-    cult3_title: "Lucha Libre 🤼‍♂️",
-    cult3_desc: "Entertaining Mexican freestyle wrestling, popular for its colorful masks and acrobatic fighting moves.",
-    quiz_title: "Mini Quiz: Which Mexican Food Are You?",
-    quiz_q1: "What is your ideal vacation?",
-    quiz_opt_1a: "A lively festival 🎉",
-    quiz_opt_1b: "A calm beach 🏖️",
-    quiz_opt_1c: "A historical adventure 🏛️",
-    quiz_btn: "See Result",
-    quiz_res_err: "Please select an option!",
-    quiz_res_tacos: "You are a Taco! 🌮 Vibrant, fun, and everyone's favorite!",
-    quiz_res_guac: "You are Guacamole! 🥑 Cool, relaxing, and indispensable!",
-    quiz_res_tamales: "You are a Tamale! 🫔 Traditional, deep, and full of surprises!",
-    footer_text: "Made with love and 🌮 - Country Promo Fest"
+    hero_title: "¡Viva México!",
+    hero_desc: "Welcome to a digital carnival. Start scrolling when you're ready!",
+    facts_title: "Secret Cards",
+    fact1_q: "How Many Types of Corn?",
+    fact1_a: "Did you know there are 59 varieties of native corn in Mexico? They come in purple, blue, and red!",
+    fact2_q: "Ancient Guide Dog",
+    fact2_a: "Hairless Xoloitzcuintli (Xolo) dogs were believed to be spiritual guides leading Aztecs to the underworld.",
+    fact3_q: "Smallest Volcano in the World",
+    fact3_a: "The Cuexcomate volcano in Puebla is only 13 meters tall, and you can take stairs down inside it!",
+    quiz_title: "The Taco Meter",
+    quiz_sub: "Which Mexican Flavor Are You? Find Out Now!",
+    quiz_q1: "What's your Friday night plan?",
+    quiz_opt_spicy: "🔥 Dance & Music (Spicy)",
+    quiz_opt_chill: "🥑 Movie & Relax (Chill)",
+    quiz_opt_sweet: "🍫 A sweet escape (Churros)",
+    quiz_res_spicy: "You are Spicy Salsa! 🔥 The party starts with you, boundless energy!",
+    quiz_res_chill: "You are Guacamole! 🥑 Calm, cool, and everyone's favorite!",
+    quiz_res_sweet: "You are a Churro! 🍫 Sweet, warm, and a source of happiness!",
+    muertos_title: "Día de los Muertos 💀",
+    muertos_1_title: "Altars (Ofrendas)",
+    muertos_1_desc: "Decorated with flowers and candles to invite spirits home.",
+    muertos_2_title: "Cempasúchil",
+    muertos_2_desc: "Orange marigold flowers guide spirits with their scent.",
+    muertos_3_title: "La Calavera Catrina",
+    muertos_3_desc: "The elegant skeleton figure with a colorful hat is the legendary face of the festival.",
+    pinata_title: "Pop the Piñata!",
+    pinata_desc: "Click the Piñata to reveal your surprise.",
+    proverbs: [
+      "Full belly, happy heart. (Barriga llena, corazón contento)",
+      "Only those who wait despair.",
+      "Music feeds the soul, tacos feed the body! 🌮",
+      "Catch the sun today, the stars tomorrow! ✨"
+    ]
   },
   es: {
-    nav_title: "Viva México",
-    hero_title: "¡Bienvenidos a México!",
-    hero_subtitle: "Bienvenido al mundo mágico de colores, sabores e historia.",
-    hero_btn: "Descubrir Ahora",
-    fact_title: "¿Sabías que?",
-    fact1_front: "Origen del Chocolate 🍫",
-    fact1_back: "¡El cacao era consumido como bebida por los antiguos mayas y aztecas, e incluso se usaba como moneda!",
-    fact2_front: "Pirámides Misteriosas 🕍",
-    fact2_back: "Chichén Itzá es una de las Nuevas Siete Maravillas del Mundo y un calendario astronómico impecable.",
-    fact3_front: "Televisión a Color 📺",
-    fact3_back: "Uno de los inventores de la televisión a color es el ingeniero mexicano Guillermo González Camarena.",
-    culture_title: "Rincón Cultural",
-    cult1_title: "Día de los Muertos 💀",
-    cult1_desc: "El Día de los Muertos es un festival alegre que celebra a los perdidos con altares coloridos y calaveras de azúcar.",
-    cult2_title: "Música Mariachi 🎺",
-    cult2_desc: "Con trajes tradicionales e instrumentos entusiastas, el Mariachi es la música callejera que refleja el alma de México.",
-    cult3_title: "Lucha Libre 🤼‍♂️",
-    cult3_desc: "Entretenida lucha libre mexicana, popular por sus máscaras coloridas y movimientos acrobáticos de pelea.",
-    quiz_title: "Mini Test: ¿Qué Comida Mexicana Eres?",
-    quiz_q1: "¿Cuál es tu vacación ideal?",
-    quiz_opt_1a: "Un festival animado 🎉",
-    quiz_opt_1b: "Una playa tranquila 🏖️",
-    quiz_opt_1c: "Una aventura histórica 🏛️",
-    quiz_btn: "Ver Resultado",
-    quiz_res_err: "¡Por favor selecciona una opción!",
-    quiz_res_tacos: "¡Eres un Taco! 🌮 ¡Vibrante, divertido y el favorito de todos!",
-    quiz_res_guac: "¡Eres Guacamole! 🥑 ¡Fresco, relajante e indispensable!",
-    quiz_res_tamales: "¡Eres un Tamal! 🫔 ¡Tradicional, profundo y lleno de sorpresas!",
-    footer_text: "Hecho con amor y 🌮 - Festival de Promoción de Países"
+    hero_title: "¡Viva México!",
+    hero_desc: "Bienvenido a un carnaval digital. ¡Empieza a desplazarte cuando estés listo!",
+    facts_title: "Cartas Secretas",
+    fact1_q: "¿Cuántos Tipos de Maíz?",
+    fact1_a: "¿Sabías que hay 59 variedades de maíz nativo en México? ¡Vienen en púrpura, azul y rojo!",
+    fact2_q: "Perro Guía Antiguo",
+    fact2_a: "Se creía que los perros sin pelo Xoloitzcuintli (Xolo) eran guías espirituales que llevaban a los aztecas al inframundo.",
+    fact3_q: "El Volcán Más Pequeño",
+    fact3_a: "El volcán Cuexcomate en Puebla tiene solo 13 metros de altura, ¡y puedes bajar por escaleras en su interior!",
+    quiz_title: "El Taco Meter",
+    quiz_sub: "¿Qué Sabor Mexicano Eres? ¡Descúbrelo Ahora!",
+    quiz_q1: "¿Cuál es tu plan de viernes por la noche?",
+    quiz_opt_spicy: "🔥 Baile y Música (Picante)",
+    quiz_opt_chill: "🥑 Película y Relax (Tranquilo)",
+    quiz_opt_sweet: "🍫 Un escape dulce (Churros)",
+    quiz_res_spicy: "¡Eres Salsa Picante! 🔥 ¡La fiesta comienza contigo, energía ilimitada!",
+    quiz_res_chill: "¡Eres Guacamole! 🥑 ¡Tranquilo, fresco y el favorito de todos!",
+    quiz_res_sweet: "¡Eres un Churro! 🍫 ¡Dulce, cálido y una fuente de felicidad!",
+    muertos_title: "Día de los Muertos 💀",
+    muertos_1_title: "Altares (Ofrendas)",
+    muertos_1_desc: "Decorados con flores y velas para invitar a los espíritus a casa.",
+    muertos_2_title: "Cempasúchil",
+    muertos_2_desc: "Las flores de cempasúchil naranjas guían a los espíritus con su aroma.",
+    muertos_3_title: "La Calavera Catrina",
+    muertos_3_desc: "La elegante figura de esqueleto con un sombrero colorido es el rostro legendario del festival.",
+    pinata_title: "¡Rompe la Piñata!",
+    pinata_desc: "Haz clic en la Piñata para revelar tu sorpresa.",
+    proverbs: [
+      "Barriga llena, corazón contento.",
+      "Solo desespera el que espera.",
+      "¡La música alimenta el alma, los tacos alimentan el cuerpo! 🌮",
+      "¡Atrapa el sol hoy, las estrellas mañana! ✨"
+    ]
   }
 };
 
 let currentLang = 'tr';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const splashScreen = document.getElementById("splash-screen");
-  const navbar = document.getElementById("navbar");
-  const mainContent = document.getElementById("main-content");
-  const footer = document.getElementById("footer");
-  const langSelect = document.getElementById("lang-select");
+  // Elements
+  const splashPortal = document.getElementById("splash-portal");
+  const appContent = document.getElementById("app-content");
+  const langMenuBtns = document.querySelectorAll(".lang-menu button");
 
-  // Splash Screen Logic
-  const savedLang = localStorage.getItem("mexico_app_lang");
+  // ==========================================
+  // Initialization & Language logic
+  // ==========================================
+  const savedLang = localStorage.getItem("fiesta_lang");
 
   if (savedLang) {
-    // If language is already selected, skip splash screen
     currentLang = savedLang;
-    hideSplashAndShowContent();
-    updateLanguage(currentLang);
-    langSelect.value = currentLang;
-  } else {
-    // Wait for user to select language from splash
-    const langBtns = document.querySelectorAll(".lang-btn");
-    langBtns.forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        const selectedLang = e.target.getAttribute("data-lang");
-        currentLang = selectedLang;
-        localStorage.setItem("mexico_app_lang", selectedLang);
-        langSelect.value = selectedLang;
-        updateLanguage(selectedLang);
-        
-        // Hide splash with fade out
-        splashScreen.style.opacity = "0";
-        setTimeout(() => {
-          hideSplashAndShowContent();
-        }, 500);
-      });
-    });
+    hideSplash();
+    applyLanguage(currentLang);
   }
 
-  // Language Dropdown Logic (Navbar)
-  langSelect.addEventListener("change", (e) => {
-    currentLang = e.target.value;
-    localStorage.setItem("mexico_app_lang", currentLang);
-    updateLanguage(currentLang);
+  // Splash selection
+  document.querySelectorAll(".portal-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const selected = e.target.getAttribute("data-lang");
+      currentLang = selected;
+      localStorage.setItem("fiesta_lang", selected);
+      applyLanguage(selected);
+      
+      // Portal exit animation
+      splashPortal.style.transform = "scale(1.5)";
+      splashPortal.style.opacity = "0";
+      setTimeout(hideSplash, 800);
+      
+      // Fire confetti when entering
+      fireHeroConfetti();
+    });
   });
 
-  // Quiz Logic
-  const quizBtn = document.getElementById("btn-quiz");
+  // Floating menu selection
+  langMenuBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const selected = e.target.getAttribute("data-lang");
+      currentLang = selected;
+      localStorage.setItem("fiesta_lang", selected);
+      applyLanguage(selected);
+    });
+  });
+
+  function hideSplash() {
+    splashPortal.classList.add("hidden");
+    appContent.classList.remove("hidden");
+  }
+
+  function applyLanguage(lang) {
+    const dict = i18n[lang];
+    if(!dict) return;
+
+    // Text translations
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key]) el.textContent = dict[key];
+    });
+
+    // Option translations manually
+    const qBtns = document.querySelectorAll(".q-btn");
+    if(qBtns.length === 3) {
+      qBtns[0].textContent = dict.quiz_opt_spicy;
+      qBtns[1].textContent = dict.quiz_opt_chill;
+      qBtns[2].textContent = dict.quiz_opt_sweet;
+    }
+
+    // Reset Quiz state if changed
+    const resBox = document.getElementById("quiz-result");
+    if (!resBox.classList.contains("hidden")) {
+      resBox.classList.add("hidden");
+    }
+    
+    // Reset Piñata state if changed
+    const pinataMsg = document.getElementById("pinata-message");
+    if (!pinataMsg.classList.contains("hidden")) {
+      pinataMsg.classList.add("hidden");
+      document.getElementById("pinata-btn").classList.remove("broken");
+    }
+  }
+
+  // ==========================================
+  // Scroll Animations (Intersection Observer)
+  // ==========================================
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ==========================================
+  // Confetti Logic
+  // ==========================================
+  function fireHeroConfetti() {
+    if(typeof confetti === 'function') {
+      const duration = 3000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#006847', '#ce1126', '#ffffff', '#e4007c', '#ff8c00']
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#006847', '#ce1126', '#ffffff', '#e4007c', '#ff8c00']
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+    }
+  }
+
+  // ==========================================
+  // Quiz: The Taco Meter
+  // ==========================================
+  const quizBtns = document.querySelectorAll(".q-btn");
   const quizResult = document.getElementById("quiz-result");
 
-  quizBtn.addEventListener("click", () => {
-    const selectedOption = document.querySelector('input[name="q1"]:checked');
-    quizResult.classList.remove("hidden");
-    
-    if (!selectedOption) {
-      quizResult.textContent = translations[currentLang].quiz_res_err;
-      quizResult.style.color = "var(--color-red)";
-      return;
-    }
+  quizBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const val = e.target.getAttribute("data-val");
+      const dict = i18n[currentLang];
+      
+      quizResult.classList.remove("hidden");
+      
+      // Simple pop sound logic using web audio api (optional/synthetic)
+      playPopSound();
 
-    quizResult.style.color = "var(--color-green)";
-    const val = selectedOption.value;
-    if (val === "tacos") {
-      quizResult.textContent = translations[currentLang].quiz_res_tacos;
-    } else if (val === "guac") {
-      quizResult.textContent = translations[currentLang].quiz_res_guac;
-    } else if (val === "tamales") {
-      quizResult.textContent = translations[currentLang].quiz_res_tamales;
+      if (val === "spicy") quizResult.textContent = dict.quiz_res_spicy;
+      if (val === "chill") quizResult.textContent = dict.quiz_res_chill;
+      if (val === "sweet") quizResult.textContent = dict.quiz_res_sweet;
+    });
+  });
+
+  // ==========================================
+  // Piñata Surprise
+  // ==========================================
+  const pinataBtn = document.getElementById("pinata-btn");
+  const pinataMsg = document.getElementById("pinata-message");
+  let hits = 0;
+
+  pinataBtn.addEventListener("click", () => {
+    if(pinataBtn.classList.contains("broken")) return; // already broken
+
+    hits++;
+    pinataBtn.classList.add("hit");
+    playPopSound(150 + hits*100);
+
+    setTimeout(() => {
+      pinataBtn.classList.remove("hit");
+    }, 150);
+
+    // Break on 3rd hit
+    if (hits >= 3) {
+      pinataBtn.classList.add("broken");
+      
+      // Explode Confetti at mouse click location or center
+      if(typeof confetti === 'function') {
+        confetti({
+          particleCount: 150,
+          spread: 100,
+          origin: { y: 0.8 },
+          colors: ['#e4007c', '#ff8c00', '#f1c40f', '#00a8e8']
+        });
+      }
+
+      // Show random proverb
+      setTimeout(() => {
+        const proverbs = i18n[currentLang].proverbs;
+        const random = proverbs[Math.floor(Math.random() * proverbs.length)];
+        pinataMsg.textContent = random;
+        pinataMsg.classList.remove("hidden");
+        hits = 0; // reset for potential future logic, though it's broken now
+      }, 500);
     }
   });
 
-  // Helper functions
-  function hideSplashAndShowContent() {
-    splashScreen.classList.add("hidden");
-    navbar.classList.remove("hidden");
-    mainContent.classList.remove("hidden");
-    footer.classList.remove("hidden");
-  }
-
-  function updateLanguage(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
-    elements.forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-
-    // Reset quiz result text if it's visible
-    if (!quizResult.classList.contains("hidden")) {
-      const selectedOption = document.querySelector('input[name="q1"]:checked');
-      if (!selectedOption) {
-        quizResult.textContent = translations[lang].quiz_res_err;
-      } else {
-        const val = selectedOption.value;
-        if (val === "tacos") quizResult.textContent = translations[lang].quiz_res_tacos;
-        if (val === "guac") quizResult.textContent = translations[lang].quiz_res_guac;
-        if (val === "tamales") quizResult.textContent = translations[lang].quiz_res_tamales;
-      }
-    }
+  // ==========================================
+  // Simple Synthesizer for UI Sounds
+  // ==========================================
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  function playPopSound(freq = 300) {
+    if(audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
+    
+    gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+    
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.1);
   }
 });

@@ -3,165 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meksika'yı Keşfet | Ülke Tanıtım Şenliği</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet" />
+  <title>¡FIESTA! | Meksika Karnavalı</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Fredoka+One&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Confetti.js -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-  <!-- Splash Screen (Language Selection) -->
-  <div id="splash-screen" class="splash-screen">
-    <div class="splash-content">
-      <h1 class="splash-title">¡Hola!</h1>
-      <p id="splash-desc">Lütfen bir dil seçin / Please select a language / Por favor seleccione un idioma</p>
-      <div class="lang-options">
-        <button class="lang-btn" data-lang="tr">🇹🇷 Türkçe</button>
-        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
-        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+  <!-- Language Portal (Splash) -->
+  <div id="splash-portal" class="splash-portal">
+    <div class="portal-glass">
+      <div class="portal-icon wobble">🪅</div>
+      <h1 class="portal-title">Bienvenido</h1>
+      <p class="portal-subtitle" id="portal-desc">Portal de Idiomas</p>
+      <div class="portal-langs">
+        <button class="portal-btn" data-lang="tr">🇹🇷 TR</button>
+        <button class="portal-btn" data-lang="en">🇬🇧 EN</button>
+        <button class="portal-btn" data-lang="es">🇪🇸 ES</button>
       </div>
     </div>
   </div>
 
-  <!-- Navbar -->
-  <header id="navbar" class="hidden">
-    <div class="nav-container">
-      <div class="logo">🇲🇽 <span data-i18n="nav_title">Viva México</span></div>
-      <div class="lang-selector">
-        <select id="lang-select">
-          <option value="tr">🇹🇷 TR</option>
-          <option value="en">🇬🇧 EN</option>
-          <option value="es">🇪🇸 ES</option>
-        </select>
-      </div>
+  <!-- Floating Language Switcher -->
+  <div class="floating-lang" id="floating-lang">
+    <div class="lang-globe">🌐</div>
+    <div class="lang-menu" id="lang-menu">
+      <button data-lang="tr">TR</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
     </div>
-  </header>
+  </div>
 
-  <!-- Main Content -->
-  <main id="main-content" class="hidden">
+  <main id="app-content" class="hidden">
     
     <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h1 class="hero-title" data-i18n="hero_title">¡Bienvenidos a México!</h1>
-        <p class="hero-subtitle" data-i18n="hero_subtitle">Renklerin, lezzetlerin ve tarihin büyülü dünyasına hoş geldiniz.</p>
-        <a href="#facts" class="btn-primary" data-i18n="hero_btn">Hemen Keşfet</a>
+    <section class="hero glass-box">
+      <!-- Floating Emojis Background -->
+      <div class="floating-bg">
+        <span class="emoji-float emoji-1">🌮</span>
+        <span class="emoji-float emoji-2">🌵</span>
+        <span class="emoji-float emoji-3">🪇</span>
+        <span class="emoji-float emoji-4">🌶️</span>
       </div>
-      <div class="hero-decor decor-1"></div>
-      <div class="hero-decor decor-2"></div>
-      <div class="hero-decor decor-3"></div>
-    </section>
-
-    <!-- Did You Know? Section -->
-    <section class="facts" id="facts">
-      <div class="container">
-        <h2 class="section-title" data-i18n="fact_title">Biliyor muydunuz?</h2>
-        <div class="cards-grid">
-          
-          <!-- Card 1 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front card-pink">
-                <h3 data-i18n="fact1_front">Çikolatanın Kökeni 🍫</h3>
-                <div class="tap-hint">👆</div>
-              </div>
-              <div class="flip-card-back card-pink">
-                <p data-i18n="fact1_back">Kakao, antik Mayalar ve Aztekler tarafından içecek olarak tüketilirdi ve para yerine kullanılırdı!</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front card-orange">
-                <h3 data-i18n="fact2_front">Gizemli Piramitler 🕍</h3>
-                <div class="tap-hint">👆</div>
-              </div>
-              <div class="flip-card-back card-orange">
-                <p data-i18n="fact2_back">Chichén Itzá, dünyanın yeni yedi harikasından biridir ve kusursuz bir astronomik takvimdir.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front card-yellow">
-                <h3 data-i18n="fact3_front">Renkli Televizyon 📺</h3>
-                <div class="tap-hint">👆</div>
-              </div>
-              <div class="flip-card-back card-yellow">
-                <p data-i18n="fact3_back">Renkli televizyonun mucitlerinden biri Meksikalı mühendis Guillermo González Camarena'dır.</p>
-              </div>
-            </div>
-          </div>
-
+      <div class="hero-content scroll-reveal hidden-zoom">
+        <h1 class="rainbow-text" data-i18n="hero_title">¡Viva México!</h1>
+        <p class="hero-desc glass-pill" data-i18n="hero_desc">Dijital bir karnavala hoş geldiniz. Hazırsanız kaydırmaya başlayın!</p>
+        <div class="scroll-indicator bounce">
+          <span>👇</span>
         </div>
       </div>
     </section>
 
-    <!-- Culture Corner Section -->
-    <section class="culture" id="culture">
-      <div class="container">
-        <h2 class="section-title" data-i18n="culture_title">Kültür Köşesi</h2>
-        <div class="culture-grid">
-          <div class="culture-card">
-            <div class="culture-icon">💀</div>
-            <h3 data-i18n="cult1_title">Día de los Muertos</h3>
-            <p data-i18n="cult1_desc">Ölüler Günü, kaybettiklerimizi anmak için renkli sunaklar ve şeker kafataslarıyla kutlanan neşeli bir festivaldir.</p>
+    <!-- Magic Fact Cards -->
+    <section class="magic-facts">
+      <h2 class="section-heading neon-text" data-i18n="facts_title">Sır Kartları</h2>
+      <div class="facts-container">
+        
+        <div class="magic-card scroll-reveal hidden-left">
+          <div class="card-gimbal">
+            <div class="card-front bg-pink">
+              <span class="card-icon">🌽</span>
+              <h3 data-i18n="fact1_q">Kaç Çeşit Mısır?</h3>
+            </div>
+            <div class="card-back bg-orange">
+              <p data-i18n="fact1_a">Meksika'da 59 farklı yerli mısır türü bulunduğunu biliyor muydunuz? Renkleri mordur, mavidir, kırmızıdır!</p>
+            </div>
           </div>
-          <div class="culture-card">
-            <div class="culture-icon">🎺</div>
-            <h3 data-i18n="cult2_title">Mariachi Müzik</h3>
-            <p data-i18n="cult2_desc">Geleneksel kıyafetleri ve coşkulu enstrümanlarıyla Mariachi, Meksika'nın ruhunu yansıtan sokak müziğidir.</p>
+        </div>
+
+        <div class="magic-card scroll-reveal hidden-bottom">
+          <div class="card-gimbal">
+            <div class="card-front bg-blue">
+              <span class="card-icon">🐕</span>
+              <h3 data-i18n="fact2_q">Antik Rehber Köpek</h3>
+            </div>
+            <div class="card-back bg-pink">
+              <p data-i18n="fact2_a">Xoloitzcuintli (Xolo) cinsi tüysüz köpeklerin, Aztekleri yeraltı dünyasına götüren ruhani rehberler olduğuna inanılırdı.</p>
+            </div>
           </div>
-          <div class="culture-card">
-            <div class="culture-icon">🤼‍♂️</div>
-            <h3 data-i18n="cult3_title">Lucha Libre</h3>
-            <p data-i18n="cult3_desc">Renkli maskeleri ve akrobatik dövüş hareketleriyle popüler olan eğlenceli Meksika serbest güreşidir.</p>
+        </div>
+
+        <div class="magic-card scroll-reveal hidden-right">
+          <div class="card-gimbal">
+            <div class="card-front bg-yellow">
+              <span class="card-icon">🌋</span>
+              <h3 data-i18n="fact3_q">Dünyanın En Küçük Volkanı</h3>
+            </div>
+            <div class="card-back bg-green">
+              <p data-i18n="fact3_a">Puebla'da yer alan Cuexcomate volkanı, sadece 13 metre boyundadır ve içine merdivenle inilebilir!</p>
+            </div>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Taco Meter Quiz -->
+    <section class="taco-meter">
+      <div class="quiz-glass scroll-reveal hidden-scale">
+        <div class="taco-icon">🫔🌮🌯</div>
+        <h2 class="rainbow-text" data-i18n="quiz_title">The Taco Meter</h2>
+        <p class="quiz-sub" data-i18n="quiz_sub">Hangi Meksika Lezzetisin? Hemen Öğren!</p>
+        
+        <div class="quiz-question" data-i18n="quiz_q1">Cuma gecesi planın nedir?</div>
+        <div class="quiz-options">
+          <button class="q-btn" data-val="spicy">🔥 Dans & Müzik (Acılı)</button>
+          <button class="q-btn" data-val="chill">🥑 Film & Dinlenme (Sakin)</button>
+          <button class="q-btn" data-val="sweet">🍫 Tatlı bir kaçamak (Churros)</button>
+        </div>
+
+        <div id="quiz-result" class="quiz-result-popup hidden">
+          <!-- Result injected here -->
         </div>
       </div>
     </section>
 
-    <!-- Quiz Section -->
-    <section class="quiz" id="quiz">
-      <div class="container">
-        <div class="quiz-box">
-          <h2 class="quiz-title" data-i18n="quiz_title">Mini Test: Hangi Meksika Yemeğisin?</h2>
-          
-          <div id="quiz-question-container">
-            <p class="quiz-question" data-i18n="quiz_q1">İdeal tatilin hangisi?</p>
-            <div class="quiz-options">
-              <label class="quiz-option">
-                <input type="radio" name="q1" value="tacos">
-                <span data-i18n="quiz_opt_1a">Hareketli bir festival 🎉</span>
-              </label>
-              <label class="quiz-option">
-                <input type="radio" name="q1" value="guac">
-                <span data-i18n="quiz_opt_1b">Sakin bir plaj 🏖️</span>
-              </label>
-              <label class="quiz-option">
-                <input type="radio" name="q1" value="tamales">
-                <span data-i18n="quiz_opt_1c">Tarihi bir macera 🏛️</span>
-              </label>
-            </div>
-          </div>
-
-          <button id="btn-quiz" class="btn-secondary" data-i18n="quiz_btn">Sonucu Gör</button>
-          
-          <div id="quiz-result" class="quiz-result hidden">
-            <!-- JS will inject result here based on language -->
-          </div>
+    <!-- Día de los Muertos Gallery -->
+    <section class="muertos-gallery">
+      <h2 class="section-heading neon-skull" data-i18n="muertos_title">Día de los Muertos 💀</h2>
+      <div class="neon-grid">
+        <div class="neon-card scroll-reveal hidden-left">
+          <div class="neon-icon">🕯️</div>
+          <h3 data-i18n="muertos_1_title">Altarlar (Ofrendas)</h3>
+          <p data-i18n="muertos_1_desc">Ruhları eve davet etmek için çiçekler ve mumlarla donatılır.</p>
         </div>
+        <div class="neon-card scroll-reveal hidden-bottom">
+          <div class="neon-icon">🏵️</div>
+          <h3 data-i18n="muertos_2_title">Cempasúchil</h3>
+          <p data-i18n="muertos_2_desc">Turuncu kadife çiçekleri, kokusuyla ruhlara yol gösterir.</p>
+        </div>
+        <div class="neon-card scroll-reveal hidden-right">
+          <div class="neon-icon">🎭</div>
+          <h3 data-i18n="muertos_3_title">La Calavera Catrina</h3>
+          <p data-i18n="muertos_3_desc">Renkli şapkalı zarif iskelet figürü festivalin efsanevi yüzüdür.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Piñata Surprise -->
+    <section class="pinata-section scroll-reveal hidden-zoom">
+      <h2 class="rainbow-text" data-i18n="pinata_title">Piñata'yı Patlat!</h2>
+      <p data-i18n="pinata_desc">Sürprizi görmek için Piñata'ya tıkla.</p>
+      
+      <div class="pinata-wrapper" id="pinata-btn">
+        <div class="pinata-emoji wobble">🪅</div>
+        <div class="stick">🏒</div>
+      </div>
+
+      <div id="pinata-message" class="pinata-message hidden">
+        <!-- Message Injected -->>
       </div>
     </section>
 
   </main>
-
-  <footer id="footer" class="hidden">
-    <p data-i18n="footer_text">Sevgiyle ve 🌮 ile yapıldı - Ülke Tanıtım Şenliği</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
