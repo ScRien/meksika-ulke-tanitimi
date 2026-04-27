@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>¡FIESTA! | Meksika Karnavalı</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Fredoka+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Fredoka+One&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <!-- Confetti.js -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
 
   <!-- Language Portal (Splash) -->
@@ -36,7 +39,7 @@
   </div>
 
   <main id="app-content" class="hidden">
-    
+
     <!-- Hero Section -->
     <section class="hero glass-box">
       <!-- Floating Emojis Background -->
@@ -48,7 +51,8 @@
       </div>
       <div class="hero-content scroll-reveal hidden-zoom">
         <h1 class="rainbow-text" data-i18n="hero_title">¡Viva México!</h1>
-        <p class="hero-desc glass-pill" data-i18n="hero_desc">Dijital bir karnavala hoş geldiniz. Hazırsanız kaydırmaya başlayın!</p>
+        <p class="hero-desc glass-pill" data-i18n="hero_desc">Dijital bir karnavala hoş geldiniz. Hazırsanız kaydırmaya
+          başlayın!</p>
         <div class="scroll-indicator bounce">
           <span>👇</span>
         </div>
@@ -59,7 +63,7 @@
     <section class="magic-facts">
       <h2 class="section-heading neon-text" data-i18n="facts_title">Sır Kartları</h2>
       <div class="facts-container">
-        
+
         <div class="magic-card scroll-reveal hidden-left">
           <div class="card-gimbal">
             <div class="card-front bg-pink">
@@ -67,7 +71,8 @@
               <h3 data-i18n="fact1_q">Kaç Çeşit Mısır?</h3>
             </div>
             <div class="card-back bg-orange">
-              <p data-i18n="fact1_a">Meksika'da 59 farklı yerli mısır türü bulunduğunu biliyor muydunuz? Renkleri mordur, mavidir, kırmızıdır!</p>
+              <p data-i18n="fact1_a">Meksika'da 59 farklı yerli mısır türü bulunduğunu biliyor muydunuz? Renkleri
+                mordur, mavidir, kırmızıdır!</p>
             </div>
           </div>
         </div>
@@ -79,7 +84,8 @@
               <h3 data-i18n="fact2_q">Antik Rehber Köpek</h3>
             </div>
             <div class="card-back bg-pink">
-              <p data-i18n="fact2_a">Xoloitzcuintli (Xolo) cinsi tüysüz köpeklerin, Aztekleri yeraltı dünyasına götüren ruhani rehberler olduğuna inanılırdı.</p>
+              <p data-i18n="fact2_a">Xoloitzcuintli (Xolo) cinsi tüysüz köpeklerin, Aztekleri yeraltı dünyasına götüren
+                ruhani rehberler olduğuna inanılırdı.</p>
             </div>
           </div>
         </div>
@@ -91,7 +97,8 @@
               <h3 data-i18n="fact3_q">Dünyanın En Küçük Volkanı</h3>
             </div>
             <div class="card-back bg-green">
-              <p data-i18n="fact3_a">Puebla'da yer alan Cuexcomate volkanı, sadece 13 metre boyundadır ve içine merdivenle inilebilir!</p>
+              <p data-i18n="fact3_a">Puebla'da yer alan Cuexcomate volkanı, sadece 13 metre boyundadır ve içine
+                merdivenle inilebilir!</p>
             </div>
           </div>
         </div>
@@ -105,7 +112,7 @@
         <div class="taco-icon">🫔🌮🌯</div>
         <h2 class="rainbow-text" data-i18n="quiz_title">The Taco Meter</h2>
         <p class="quiz-sub" data-i18n="quiz_sub">Hangi Meksika Lezzetisin? Hemen Öğren!</p>
-        
+
         <div class="quiz-question" data-i18n="quiz_q1">Cuma gecesi planın nedir?</div>
         <div class="quiz-options">
           <button class="q-btn" data-val="spicy">🔥 Dans & Müzik (Acılı)</button>
@@ -115,6 +122,29 @@
 
         <div id="quiz-result" class="quiz-result-popup hidden">
           <!-- Result injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Mexico (Interactive Map & Realistic Imagery) -->
+    <section class="explore-map scroll-reveal hidden-scale">
+      <h2 class="rainbow-text" data-i18n="map_title">Meksika'yı Keşfet!</h2>
+      <p class="map-desc glass-pill" data-i18n="map_desc">Gerçekçi dokunuşlarla Meksika'nın kalbine yolculuk yapın.</p>
+
+      <div class="interactive-map-wrapper glass-box">
+        <div class="map-left">
+          <div class="map-bg-container">
+            <!-- Reliable actual Mexico SVG layout -->
+            <img class="mexico-map-img" src="mexico.svg" alt="Mexico map outline">
+            <div class="map-pin active" id="pin-cdmx" data-loc="cdmx" title="Mexico City">📍</div>
+            <div class="map-pin" id="pin-chichen" data-loc="chichen" title="Chichén Itzá">📍</div>
+            <div class="map-pin" id="pin-oaxaca" data-loc="oaxaca" title="Oaxaca">📍</div>
+          </div>
+        </div>
+        <div class="map-right" id="map-info-panel">
+          <img id="map-info-img" src="" alt="">
+          <h3 id="map-info-title" class="neon-text"></h3>
+          <p id="map-info-desc"></p>
         </div>
       </div>
     </section>
@@ -145,7 +175,7 @@
     <section class="pinata-section scroll-reveal hidden-zoom">
       <h2 class="rainbow-text" data-i18n="pinata_title">Piñata'yı Patlat!</h2>
       <p data-i18n="pinata_desc">Sürprizi görmek için Piñata'ya tıkla.</p>
-      
+
       <div class="pinata-wrapper" id="pinata-btn">
         <div class="pinata-emoji wobble">🪅</div>
         <div class="stick">🏒</div>
@@ -160,4 +190,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

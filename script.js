@@ -28,6 +28,11 @@ const i18n = {
     muertos_2_desc: "Turuncu kadife çiçekleri, kokusuyla ruhlara yol gösterir.",
     muertos_3_title: "La Calavera Catrina",
     muertos_3_desc: "Renkli şapkalı zarif iskelet figürü festivalin efsanevi yüzüdür.",
+    map_title: "Meksika'yı Keşfet!",
+    map_desc: "Gerçekçi dokunuşlarla Meksika'nın kalbine yolculuk yapın.",
+    img_1_title: "Chichén Itzá",
+    img_2_title: "Gerçek Lezzet",
+    img_3_title: "Mexico City (CDMX)",
     pinata_title: "Piñata'yı Patlat!",
     pinata_desc: "Sürprizi görmek için Piñata'ya tıkla.",
     proverbs: [
@@ -63,6 +68,11 @@ const i18n = {
     muertos_2_desc: "Orange marigold flowers guide spirits with their scent.",
     muertos_3_title: "La Calavera Catrina",
     muertos_3_desc: "The elegant skeleton figure with a colorful hat is the legendary face of the festival.",
+    map_title: "Explore Mexico!",
+    map_desc: "Journey to the heart of Mexico with realistic touches.",
+    img_1_title: "Chichén Itzá",
+    img_2_title: "Authentic Flavor",
+    img_3_title: "Mexico City (CDMX)",
     pinata_title: "Pop the Piñata!",
     pinata_desc: "Click the Piñata to reveal your surprise.",
     proverbs: [
@@ -98,6 +108,11 @@ const i18n = {
     muertos_2_desc: "Las flores de cempasúchil naranjas guían a los espíritus con su aroma.",
     muertos_3_title: "La Calavera Catrina",
     muertos_3_desc: "La elegante figura de esqueleto con un sombrero colorido es el rostro legendario del festival.",
+    map_title: "¡Explora México!",
+    map_desc: "Viaja al corazón de México con toques realistas.",
+    img_1_title: "Chichén Itzá",
+    img_2_title: "Sabor Auténtico",
+    img_3_title: "Ciudad de México (CDMX)",
     pinata_title: "¡Rompe la Piñata!",
     pinata_desc: "Haz clic en la Piñata para revelar tu sorpresa.",
     proverbs: [
@@ -109,7 +124,33 @@ const i18n = {
   }
 };
 
+// Reliable image URLs via Wikimedia Commons direct paths
+const IMG = {
+  cdmx: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Bellas_Artes_01.jpg/1920px-Bellas_Artes_01.jpg",
+  chichen: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Chichen_Itza_3.jpg/1920px-Chichen_Itza_3.jpg",
+  oaxaca: "https://cdn.britannica.com/54/197354-050-5BE2B0AF/Statue-front-cathedral-Santa-Maria-la-Menor.jpg"
+};
+
+const mapData = {
+  tr: {
+    cdmx: { title: "Mexico City (CDMX)", desc: "Aztek başkenti Tenochtitlan'ın külleri üzerine kurulan bu devasa metropol, müzeleri ve enerjisiyle büyülüyor.", img: IMG.cdmx },
+    chichen: { title: "Chichén Itzá", desc: "Gizemli Mayaların inşa ettiği El Castillo piramidi, dünyanın yedi harikasından biri ve mükemmel bir astronomik takvimdir.", img: IMG.chichen },
+    oaxaca: { title: "Oaxaca", desc: "Zengin mutfağı, renkli sokakları ve muazzam Monte Albán antik kentiyle Meksika kültürünün tam kalbi.", img: IMG.oaxaca }
+  },
+  en: {
+    cdmx: { title: "Mexico City (CDMX)", desc: "Built on the ashes of the Aztec capital Tenochtitlan, this massive metropolis fascinates with its museums and energy.", img: IMG.cdmx },
+    chichen: { title: "Chichén Itzá", desc: "Built by the mysterious Mayans, the El Castillo pyramid is one of the Seven Wonders of the World and a perfect astronomical calendar.", img: IMG.chichen },
+    oaxaca: { title: "Oaxaca", desc: "The very heart of Mexican culture with its rich cuisine, colorful streets, and the magnificent ancient city of Monte Albán.", img: IMG.oaxaca }
+  },
+  es: {
+    cdmx: { title: "Ciudad de México", desc: "Construida sobre las cenizas de la capital azteca Tenochtitlán, esta enorme metrópolis fascina por sus museos y energía.", img: IMG.cdmx },
+    chichen: { title: "Chichén Itzá", desc: "Construida por los misteriosos mayas, la pirámide de El Castillo es una de las Siete Maravillas del Mundo y un calendario astronómico perfecto.", img: IMG.chichen },
+    oaxaca: { title: "Oaxaca", desc: "El verdadero corazón de la cultura mexicana con su rica gastronomía, sus calles coloridas y la magnífica ciudad antigua de Monte Albán.", img: IMG.oaxaca }
+  }
+};
+
 let currentLang = 'tr';
+let activeMapLoc = 'cdmx';
 
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
@@ -135,12 +176,12 @@ document.addEventListener("DOMContentLoaded", () => {
       currentLang = selected;
       localStorage.setItem("fiesta_lang", selected);
       applyLanguage(selected);
-      
+
       // Portal exit animation
       splashPortal.style.transform = "scale(1.5)";
       splashPortal.style.opacity = "0";
       setTimeout(hideSplash, 800);
-      
+
       // Fire confetti when entering
       fireHeroConfetti();
     });
@@ -163,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyLanguage(lang) {
     const dict = i18n[lang];
-    if(!dict) return;
+    if (!dict) return;
 
     // Text translations
     document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -173,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Option translations manually
     const qBtns = document.querySelectorAll(".q-btn");
-    if(qBtns.length === 3) {
+    if (qBtns.length === 3) {
       qBtns[0].textContent = dict.quiz_opt_spicy;
       qBtns[1].textContent = dict.quiz_opt_chill;
       qBtns[2].textContent = dict.quiz_opt_sweet;
@@ -184,14 +225,52 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!resBox.classList.contains("hidden")) {
       resBox.classList.add("hidden");
     }
-    
+
     // Reset Piñata state if changed
     const pinataMsg = document.getElementById("pinata-message");
     if (!pinataMsg.classList.contains("hidden")) {
       pinataMsg.classList.add("hidden");
       document.getElementById("pinata-btn").classList.remove("broken");
     }
+
+    // Update Interactive Map Panel
+    if (mapData[lang] && mapData[lang][activeMapLoc]) {
+      const d = mapData[lang][activeMapLoc];
+      document.getElementById("map-info-img").src = d.img;
+      document.getElementById("map-info-title").textContent = d.title;
+      document.getElementById("map-info-desc").textContent = d.desc;
+    }
   }
+
+  // ==========================================
+  // Interactive Map Logic
+  // ==========================================
+  const mapPins = document.querySelectorAll(".map-pin");
+  mapPins.forEach(pin => {
+    pin.addEventListener("click", (e) => {
+      // Manage active classes
+      mapPins.forEach(p => p.classList.remove("active"));
+      pin.classList.add("active");
+
+      const loc = pin.getAttribute("data-loc");
+      activeMapLoc = loc;
+
+      const d = mapData[currentLang][loc];
+      const imgEl = document.getElementById("map-info-img");
+
+      // Trigger a quick re-animation by removing and re-adding src
+      imgEl.style.transition = 'opacity 0.2s';
+      imgEl.style.opacity = 0;
+      setTimeout(() => {
+        imgEl.src = d.img;
+        document.getElementById("map-info-title").textContent = d.title;
+        document.getElementById("map-info-desc").textContent = d.desc;
+        imgEl.style.opacity = 1;
+      }, 200);
+
+      playPopSound(500);
+    });
+  });
 
   // ==========================================
   // Scroll Animations (Intersection Observer)
@@ -218,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Confetti Logic
   // ==========================================
   function fireHeroConfetti() {
-    if(typeof confetti === 'function') {
+    if (typeof confetti === 'function') {
       const duration = 3000;
       const end = Date.now() + duration;
 
@@ -255,9 +334,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       const val = e.target.getAttribute("data-val");
       const dict = i18n[currentLang];
-      
+
       quizResult.classList.remove("hidden");
-      
+
       // Simple pop sound logic using web audio api (optional/synthetic)
       playPopSound();
 
@@ -275,11 +354,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let hits = 0;
 
   pinataBtn.addEventListener("click", () => {
-    if(pinataBtn.classList.contains("broken")) return; // already broken
+    if (pinataBtn.classList.contains("broken")) return; // already broken
 
     hits++;
     pinataBtn.classList.add("hit");
-    playPopSound(150 + hits*100);
+    playPopSound(150 + hits * 100);
 
     setTimeout(() => {
       pinataBtn.classList.remove("hit");
@@ -288,9 +367,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Break on 3rd hit
     if (hits >= 3) {
       pinataBtn.classList.add("broken");
-      
+
       // Explode Confetti at mouse click location or center
-      if(typeof confetti === 'function') {
+      if (typeof confetti === 'function') {
         confetti({
           particleCount: 150,
           spread: 100,
@@ -315,20 +394,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   function playPopSound(freq = 300) {
-    if(audioCtx.state === 'suspended') audioCtx.resume();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
     const osc = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
-    
+
     osc.type = 'sine';
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
     osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
-    
+
     gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
     gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
-    
+
     osc.connect(gainNode);
     gainNode.connect(audioCtx.destination);
-    
+
     osc.start();
     osc.stop(audioCtx.currentTime + 0.1);
   }
